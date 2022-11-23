@@ -58,7 +58,7 @@ resource "azurerm_virtual_network" "prod_private" {
 ## Network Security Groups
 resource "azurerm_network_security_group" "prod_public_apptier" {
   name                = "prod-jenkins-public-vnet-apptier"
-  location            = local.location
+  location            = var.location
   resource_group_name = azurerm_resource_group.prod_public.name
 
   # Inbound rules
